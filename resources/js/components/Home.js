@@ -15,7 +15,7 @@ function Home() {
                         <div className="card-header">Home</div>
 
                         <div className="card-body">
-                            I'm an example component!
+                            Home Page!
                         </div>
                     </Card>
                 </div>

@@ -38,7 +38,7 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Blog::create($request->all());
     }
 
     /**
@@ -49,7 +49,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        return Blog::find($id);
     }
 
     /**
@@ -72,7 +72,9 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $blog = Blog::findOrFail($id);
+        $blog->update($request->all());
+        return $blog;
     }
 
     /**
@@ -81,8 +83,11 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $request, $id)
     {
-        //
+        $blog = Blog::findOrFail($id);
+        $blog->delete();
+
+        return 204;
     }
 }

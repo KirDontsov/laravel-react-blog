@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Blog from "./Blog";
 
 class BlogArticle extends Component {
     constructor(props) {
@@ -12,19 +11,24 @@ class BlogArticle extends Component {
 
     componentDidMount() {
         axios
-            .get("/api/blog/" + this.props.match.id)
+            .get("/api/blog/" + this.props.match.params.id)
             .then((response) => {
                 this.setState({ post: response.data[0] });
             })
             .catch((err) => console.log(err));
     }
     render() {
-        console.log(this.props);
-        return (
-            <div className="container">
-                <h1>Hello!</h1>
-            </div>
-        );
+        if (this.state.post) {
+            console.log(this.state);
+            return (
+                <div className="container">
+                    <h1>{this.state.post.name}</h1>
+                    <p>{this.state.post.body}</p>
+                </div>
+            );
+        } else {
+            return null;
+        }
     }
 }
 

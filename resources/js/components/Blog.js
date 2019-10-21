@@ -11,16 +11,11 @@ class Blog extends Component {
     }
 
     componentDidMount() {
-        axios
-            .get("api/blog")
-            .then((response) => {
-                this.setState({
-                    blogs: response.data
-                });
-            })
-            .catch((err) => {
-                console.log(err);
+        axios.get("api/blog").then((response) => {
+            this.setState({
+                blogs: response.data
             });
+        });
     }
 
     render() {

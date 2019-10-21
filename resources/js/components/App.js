@@ -49,7 +49,11 @@ function App() {
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/blog" exact component={Blog} />
-                <Route path="/blog/:id" component={BlogArticle} />
+                <Route
+                    path="/blog/:id"
+                    exact
+                    render={(props) => <BlogArticle {...props} />}
+                />
             </Switch>
         </div>
     );
