@@ -11,14 +11,14 @@ class BlogArticle extends Component {
 
     componentDidMount() {
         axios
-            .get("/api/blog/" + this.props.match.params.id)
+            .get("api/blog/" + this.props.match.params.id)
             .then((response) => {
                 this.setState({ post: response.data[0] });
             })
             .catch((err) => console.log(err));
     }
     render() {
-        if (this.state.post) {
+        if (this.state) {
             console.log(this.state);
             return (
                 <div className="container">

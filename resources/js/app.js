@@ -3,11 +3,11 @@ require("./bootstrap");
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, browserHistory } from "react-router-dom";
-import App from "./components/App";
+import Index from "./components/Index";
 
 ReactDOM.render(
     <Router history={browserHistory}>
-        <App />
+        <Index />
     </Router>,
     document.getElementById("root")
 );

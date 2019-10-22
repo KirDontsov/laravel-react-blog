@@ -25,6 +25,7 @@
         "sass-loader": "^7.1.0"
     },
     "dependencies": {
+        "js-cookie": "^2.2.1",
         "react-router-dom": "^5.1.2",
         "styled-components": "^4.4.0"
     }
