@@ -6,7 +6,7 @@ import { BrowserRouter as Router, browserHistory } from "react-router-dom";
 import Index from "./components/Index";
 
 ReactDOM.render(
-    <Router history={browserHistory}>
+    <Router>
         <Index />
     </Router>,
     document.getElementById("root")

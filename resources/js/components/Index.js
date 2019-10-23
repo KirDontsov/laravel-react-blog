@@ -4,6 +4,7 @@ import Blog from "./Blog";
 import Home from "./IndexContent";
 import BlogArticle from "./BlogArticle";
 import Logo from "./Logo";
+import NotFound from "./NotFound";
 import Cookies from "js-cookie";
 
 import styled from "styled-components";
@@ -48,14 +49,21 @@ class Index extends Component {
 
     render() {
         console.log(this.state.token);
+        const { token } = this.state;
         return (
             <div>
                 <Nav>
                     <Logo />
-                    <Button as={Link} to="/blog">
-                        Blog
-                    </Button>
-                    <Button href="/home">Login</Button>
+                    {token && (
+                        <Button as={Link} to="/blog">
+                            Blog
+                        </Button>
+                    )}
+                    {token ? (
+                        <Button href="/home">Log Out</Button>
+                    ) : (
+                        <Button href="/home">Login</Button>
+                    )}
                 </Nav>
                 <Switch>
                     <Route path="/" exact component={Home} />

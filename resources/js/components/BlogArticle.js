@@ -11,7 +11,7 @@ class BlogArticle extends Component {
 
     componentDidMount() {
         axios
-            .get("api/blog/" + this.props.match.params.id)
+            .get("/api/blog/" + this.props.match.params.id)
             .then((response) => {
                 this.setState({ post: response.data[0] });
             })
@@ -19,11 +19,11 @@ class BlogArticle extends Component {
     }
     render() {
         if (this.state) {
-            console.log(this.state);
+            console.log(this.props);
             return (
                 <div className="container">
-                    <h1>{this.state.post.name}</h1>
-                    <p>{this.state.post.body}</p>
+                    <h1>Hello</h1>
+                    {/* <p>{this.state.post.body}</p> */}
                 </div>
             );
         } else {
